@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yimin WANG | Dental & Medical AI Researcher</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: #24292f;
+            background-color: #ffffff;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 24px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #57606a;
+            font-size: 1.05rem;
+            margin-bottom:12px;
+        }
+        .contact a {
+            color: #0969da;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 36px;
+        }
+        h2 {
+            font-size:1.3rem;
+            font-weight:600;
+            margin-bottom:16px;
+            padding-bottom:6px;
+            border-bottom:1px solid #eee;
+        }
+        ul {
+            padding-left:22px;
+        }
+        li {
+            margin-bottom:12px;
+        }
+        .project-title {
+            font-weight:600;
+        }
+        .status-badge {
+            display:inline-block;
+            font-size:0.85rem;
+            padding:2px 7px;
+            border-radius:12px;
+            margin-left:6px;
+        }
+        .published {
+            background-color:#dafbe1;
+            color:#1a7f37;
+        }
+        .review {
+            background-color:#fff8c5;
+            color:#9a6700;
+        }
+        .prep {
+            background-color:#eef4ff;
+            color:#2552b3;
+        }
+        .tech-stack span {
+            display:inline-block;
+            background:#f6f8fa;
+            padding:4px 9px;
+            border-radius:6px;
+            margin:4px 4px 4px 0;
+            font-size:0.9rem;
+        }
+        footer {
+            margin-top:60px;
+            padding-top:20px;
+            border-top:1px solid #eee;
+            color:#656d76;
+            font-size:0.9rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Yimin WANG</h1>
+    <div class="subtitle">Dental & Medical AI Researcher | Co-founder of Dental‑Gradient Platform</div>
+    <div class="subtitle">Stomatology Clinical Intern · Deep Learning Researcher 📍 Zhejiang, China | UTC+8</div>
+    <div class="contact">
+        Email: <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a>
+        &nbsp;|&nbsp;
+        GitHub: <a href="https://github.com/yiminwang-ai" target="_blank">github.com/yiminwang-ai</a>
+    </div>
+</header>
+
+<section>
+    <h2>🔬 Research Interests</h2>
+    <ul>
+        <li>🦷 3D Dental Point Cloud — segmentation, completion, anatomical constraints for IOS data</li>
+        <li>🧠 Multimodal Medical AI — systematic review, evidence synthesis (PRISMA / QUADAS-2)</li>
+        <li>🔗 Point-based Deep Learning — PointCNN / PointNet++ / Point-Transformer</li>
+        <li>🤖 XAI & Vision-Language Agents — explainable oral AI, LLM/VLM for dental diagnosis</li>
+    </ul>
+</section>
+
+<section>
+    <h2>🧑‍💻 Featured Projects</h2>
+    <ul>
+        <li>
+            <div class="project-title">OralGatedPCNN</div>
+            Channel-Gated Skip Module for dental point-cloud segmentation. Integrates CSMBlock into PointCNN to suppress feature redundancy.
+            <br><em>Under review at Biomedical Signal Processing and Control</em>
+        </li>
+        <li>
+            <div class="project-title">PointCloudCompletion</div>
+            PF-Net based framework for completing partially scanned dental crowns from intraoral scans.
+            <br><em>Published at International Dental Journal</em>
+        </li>
+        <li>
+            <div class="project-title">Multimodal-Dental-AI-Review</div>
+            PRISMA 2020 systematic review on multimodal AI for oral lesion screening.
+            <br><em>Under review at Journal of Medical Internet Research (JMIR)</em>
+        </li>
+        <li>
+            <div class="project-title">MedicalBertNer</div>
+            BERT-BiLSTM-CRF architecture for Chinese medical named entity recognition. Extracts diseases, drugs, symptoms, examinations from unstructured clinical texts.
+            <br><em>Code release · Silver Award, Provincial Service Outsourcing Competition</em>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>🏢 Dental-Gradient Research Group</h2>
+    <p>I lead Dental-Gradient, a 15+ member cross-university research group bridging clinical dentistry and AI. Current focus: building a 1100+ case orthodontic dataset (IOS & CBCT) for AI training.</p>
+</section>
+
+<section>
+    <h2>📜 Academic Output</h2>
+    <ul>
+        <li>🟢 Published: 2 &nbsp; <span class="status-badge published">European J Cancer (IF=7.9), Int Dent J</span></li>
+        <li>🟡 Under Review: 2 &nbsp; <span class="status-badge review">Q1 Medical AI Journals</span></li>
+        <li>🔵 In Preparation: 2 &nbsp; <span class="status-badge prep">MICCAI, npj Digital Medicine, JBHI, IEEE-TMI</span></li>
+    </ul>
+</section>
+
+<section>
+    <h2>🛠️ Tech Stack</h2>
+    <div class="tech-stack">
+        <span>Python</span>
+        <span>PyTorch</span>
+        <span>Open3D</span>
+        <span>Point-Cloud</span>
+        <span>Label-Studio</span>
+        <span>SPSS</span>
+        <span>Systematic Review</span>
+        <span>Dataset Benchmarking</span>
+    </div>
+</section>
+
+<section>
+    <h2>📫 Contact</h2>
+    <p>Email: <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a></p>
+    <p>Open to collaboration on dental AI, multimodal medical AI, and open dataset initiatives.</p>
+    <p style="margin-top:10px; color:#d73a4a; font-size:0.9rem;">⚠️ All clinical raw data are not publicly available due to ethical requirements. Repositories contain code, demo samples, and result visualizations only.</p>
+</section>
+
+<footer>
+    Bridging Clinical Dentistry and Artificial Intelligence 🦷🤝🤖
+</footer>
+</body>
+</html>
