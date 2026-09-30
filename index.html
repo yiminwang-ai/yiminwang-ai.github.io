@@ -12,175 +12,354 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.65;
             color: #24292f;
-            background-color: #ffffff;
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 40px 24px;
+            background-color: #fff;
+            display: flex;
         }
-        header {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 24px;
+        /* 左侧侧边栏 固定 */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            background: #f6f8fa;
+            padding: 32px 20px;
+            overflow-y: auto;
+            border-right: 1px solid #e5e7eb;
         }
-        h1 {
-            font-size: 2.2rem;
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 999px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 16px;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px #00000015;
+        }
+        .sidebar h1 {
+            text-align: center;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom:6px;
         }
-        .subtitle {
-            color: #57606a;
-            font-size: 1.05rem;
+        .sidebar .title {
+            text-align:center;
+            font-size:0.9rem;
+            color:#57606a;
+            margin-bottom:24px;
+        }
+        .sidebar-nav {
+            list-style:none;
+            margin: 24px 0;
+        }
+        .sidebar-nav li {
+            margin-bottom:10px;
+        }
+        .sidebar-nav a {
+            color:#24292f;
+            text-decoration:none;
+            padding: 6px 8px;
+            display:block;
+            border-radius:6px;
+        }
+        .sidebar-nav a:hover {
+            background-color:#eef2f7;
+        }
+        .sidebar-links {
+            list-style:none;
+            margin-top:24px;
+        }
+        .sidebar-links li {
             margin-bottom:12px;
         }
-        .contact a {
-            color: #0969da;
-            text-decoration: none;
+        .sidebar-links a {
+            color:#0969da;
+            text-decoration:none;
+            display:flex;
+            align-items:center;
+            gap:6px;
         }
-        .contact a:hover {
-            text-decoration: underline;
+        .sidebar-links a:hover {
+            text-decoration:underline;
+        }
+        /* 右侧主内容 */
+        .main-content {
+            margin-left:280px;
+            width:calc(100% - 280px);
+            padding:40px 60px;
+            max-width:1000px;
         }
         section {
-            margin-bottom: 36px;
+            margin-bottom:48px;
         }
         h2 {
-            font-size:1.3rem;
+            font-size:1.5rem;
             font-weight:600;
-            margin-bottom:16px;
-            padding-bottom:6px;
-            border-bottom:1px solid #eee;
+            margin-bottom:20px;
+            padding-bottom:8px;
+            border-bottom:1px solid #e5e7eb;
+        }
+        p {
+            line-height:1.7;
+            margin-bottom:12px;
         }
         ul {
             padding-left:22px;
+            line-height:1.7;
         }
         li {
-            margin-bottom:12px;
+            margin-bottom:10px;
         }
-        .project-title {
-            font-weight:600;
+        /* 论文条目样式 */
+        .pub-item {
+            margin-bottom:20px;
+            padding:16px;
+            border-radius:8px;
+            background:#fbfcfd;
+            border:1px solid #eef2f7;
         }
-        .status-badge {
+        .pub-status {
             display:inline-block;
-            font-size:0.85rem;
-            padding:2px 7px;
-            border-radius:12px;
-            margin-left:6px;
+            font-size:0.8rem;
+            padding:3px 8px;
+            border-radius:14px;
+            margin-right:8px;
         }
-        .published {
-            background-color:#dafbe1;
+        .pub-published {
+            background:#dafbe1;
             color:#1a7f37;
         }
-        .review {
-            background-color:#fff8c5;
+        .pub-review {
+            background:#fff8c5;
             color:#9a6700;
         }
-        .prep {
-            background-color:#eef4ff;
+        .pub-prep {
+            background:#eef4ff;
             color:#2552b3;
         }
-        .tech-stack span {
-            display:inline-block;
-            background:#f6f8fa;
-            padding:4px 9px;
+        .pub-title {
+            font-weight:600;
+            font-size:1.05rem;
+            margin-bottom:4px;
+        }
+        .pub-authors {
+            font-size:0.95rem;
+            color:#444;
+        }
+        .pub-venue {
+            font-size:0.9rem;
+            color:#57606a;
+        }
+        .pub-link a {
+            font-size:0.9rem;
+            color:#0969da;
+            text-decoration:none;
+            margin-right:12px;
+        }
+        .pub-link a:hover {
+            text-decoration:underline;
+        }
+        .bib-btn {
+            cursor:pointer;
+            font-size:0.85rem;
+            padding:2px 7px;
+            border:1px solid #c9d1d9;
             border-radius:6px;
-            margin:4px 4px 4px 0;
+            background:#f6f8fa;
+        }
+        .bib-block {
+            display:none;
+            margin-top:10px;
+            padding:10px;
+            background:#fff;
+            border:1px solid #ddd;
+            font-family:monospace;
+            font-size:0.85rem;
+            white-space:pre-wrap;
+            overflow-x:auto;
+            border-radius:6px;
+        }
+        .tech-tags span {
+            display:inline-block;
+            background:#f0f4f9;
+            padding:5px 10px;
+            border-radius:6px;
+            margin:6px 6px 6px 0;
             font-size:0.9rem;
         }
         footer {
-            margin-top:60px;
+            margin-top:80px;
             padding-top:20px;
             border-top:1px solid #eee;
             color:#656d76;
             font-size:0.9rem;
         }
+        /* 移动端适配 */
+        @media(max-width:860px){
+            body{flex-direction:column;}
+            .sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #eee;}
+            .main-content{margin-left:0;width:100%;padding:24px;}
+        }
     </style>
 </head>
 <body>
-<header>
-    <h1>Yimin WANG</h1>
-    <div class="subtitle">Dental & Medical AI Researcher | Co-founder of Dental‑Gradient Platform</div>
-    <div class="subtitle">Stomatology Clinical Intern · Deep Learning Researcher 📍 Zhejiang, China | UTC+8</div>
-    <div class="contact">
-        Email: <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a>
-        &nbsp;|&nbsp;
-        GitHub: <a href="https://github.com/yiminwang-ai" target="_blank">github.com/yiminwang-ai</a>
+    <!-- 左侧栏 -->
+    <div class="sidebar">
+        <img class="avatar" src="avatar.jpg" alt="Yimin WANG">
+        <h1>Yimin WANG</h1>
+        <div class="title">Dental & Medical AI Researcher</div>
+
+        <ul class="sidebar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#interest">Research Interests</a></li>
+            <li><a href="#dentalgradient">Dental-Gradient Group</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <ul class="sidebar-links">
+            <li>📍 Zhejiang, China (UTC+8)</li>
+            <li>📧 <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a></li>
+            <li>🐙 <a target="_blank" href="https://github.com/yiminwang-ai">GitHub</a></li>
+            <!-- 你后续有Google Scholar可以加上这行 -->
+            <!-- <li>📚 <a target="_blank" href="https://scholar.google.com/xxx">Google Scholar</a></li> -->
+        </ul>
     </div>
-</header>
 
-<section>
-    <h2>🔬 Research Interests</h2>
-    <ul>
-        <li>🦷 3D Dental Point Cloud — segmentation, completion, anatomical constraints for IOS data</li>
-        <li>🧠 Multimodal Medical AI — systematic review, evidence synthesis (PRISMA / QUADAS-2)</li>
-        <li>🔗 Point-based Deep Learning — PointCNN / PointNet++ / Point-Transformer</li>
-        <li>🤖 XAI & Vision-Language Agents — explainable oral AI, LLM/VLM for dental diagnosis</li>
-    </ul>
-</section>
+    <!-- 右侧主内容区 -->
+    <div class="main-content">
+        <section id="about">
+            <h2>About</h2>
+           <p>I am a medical AI deep learning researcher. My research focuses on point cloud generation, trustworthy AI, and 3D segmentation.</p>
+<p>I am extremely <strong>self-motivated</strong> and committed to translating deep learning algorithms into real clinical settings.</p>
+<p>I started my research in September 2024 as an undergraduate junior, and have worked in this field for roughly two years. I independently contacted a professor to join their lab. Without assigned projects, I shaped my own research and collaborated with a senior labmate. I now lead a research group I founded to investigate trustworthy AI, using clinical dental data as our testbed.</p>
 
-<section>
-    <h2>🧑‍💻 Featured Projects</h2>
-    <ul>
-        <li>
-            <div class="project-title">OralGatedPCNN</div>
-            Channel-Gated Skip Module for dental point-cloud segmentation. Integrates CSMBlock into PointCNN to suppress feature redundancy.
-            <br><em>Under review at Biomedical Signal Processing and Control</em>
-        </li>
-        <li>
-            <div class="project-title">PointCloudCompletion</div>
-            PF-Net based framework for completing partially scanned dental crowns from intraoral scans.
-            <br><em>Published at International Dental Journal</em>
-        </li>
-        <li>
-            <div class="project-title">Multimodal-Dental-AI-Review</div>
-            PRISMA 2020 systematic review on multimodal AI for oral lesion screening.
-            <br><em>Under review at Journal of Medical Internet Research (JMIR)</em>
-        </li>
-        <li>
-            <div class="project-title">MedicalBertNer</div>
-            BERT-BiLSTM-CRF architecture for Chinese medical named entity recognition. Extracts diseases, drugs, symptoms, examinations from unstructured clinical texts.
-            <br><em>Code release · Silver Award, Provincial Service Outsourcing Competition</em>
-        </li>
-    </ul>
-</section>
 
-<section>
-    <h2>🏢 Dental-Gradient Research Group</h2>
-    <p>I lead Dental-Gradient, a 15+ member cross-university research group bridging clinical dentistry and AI. Current focus: building a 1100+ case orthodontic dataset (IOS & CBCT) for AI training.</p>
-</section>
+        </section>
 
-<section>
-    <h2>📜 Academic Output</h2>
-    <ul>
-        <li>🟢 Published: 2 &nbsp; <span class="status-badge published">European J Cancer (IF=7.9), Int Dent J</span></li>
-        <li>🟡 Under Review: 2 &nbsp; <span class="status-badge review">Q1 Medical AI Journals</span></li>
-        <li>🔵 In Preparation: 2 &nbsp; <span class="status-badge prep">MICCAI, npj Digital Medicine, JBHI, IEEE-TMI</span></li>
-    </ul>
-</section>
+        <section id="interest">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>🛡️ <b>Trustworthy AI</b> — uncertainty and evidence-driven modeling for medical imaging and clinical diagnosis in dentistry</li>
+<li>📷 <b>3D Medical Vision</b> — segmentation, point cloud generation, shape completion and anatomical modeling on IOS/CBCT</li>
+<li>🤖 <b>Foundation Models & Vision-Language Agents</b> — cross-domain adaptation under limited labels for automated multi-task medical AI</li>
 
-<section>
-    <h2>🛠️ Tech Stack</h2>
-    <div class="tech-stack">
-        <span>Python</span>
-        <span>PyTorch</span>
-        <span>Open3D</span>
-        <span>Point-Cloud</span>
-        <span>Label-Studio</span>
-        <span>SPSS</span>
-        <span>Systematic Review</span>
-        <span>Dataset Benchmarking</span>
+            </ul>
+        </section>
+
+        <section id="dentalgradient">
+            <h2>🏢 Dental-Gradient Research Group</h2>
+            <p><strong>Founder & Lead Researcher</strong></p>
+            <p>Dental-Gradient is a cross-university research group with over 15 members, founded to close the gap between stomatology clinical practice and artificial intelligence. The group integrates clinical interns, dental clinicians and deep learning developers to build open, high-quality oral AI datasets and algorithms.</p>
+            <p><strong>Research Details：</strong></p>
+            <ul>
+                <li>Launched the orthodontic multi-modal dataset project: curating 1100+ cases combining IOS intraoral scans and CBCT volumetric data for model training and benchmarking.</li>
+                <li>Design dataset annotation pipelines, anatomical label specification, quality control, and ethical review protocols for clinical imaging data.</li>
+                <li>Coordinate cross-school collaboration, manage research milestones, code review, and manuscript writing for group projects.</li>
+                <li>Build open-source code releases, visual demos and result repositories while strictly protecting raw clinical patient data under ethical constraints.</li>
+            </ul>
+            <p>Long-term goal: Construct a trusted foundational model for oral 3D vision, supporting orthodontics, restoration and oral lesion auxiliary diagnosis.</p>
+        </section>
+
+        <section id="publications">
+            <h2>📜 Publications</h2>
+
+            <div class="pub-item">
+                <span class="pub-status pub-published">Published</span>
+                <div class="pub-title">Beyond conventional images: AI-driven biotechnologies for oral cancer diagnosis – a systematic review</div>
+                <div class="pub-authors">Yimin Wang, Changan Chen, Yiwei Gao, Qianshun Hu, Panzhuoer Gao, Qianhan Zheng, Luyi Wang, Zhijian Xie*, Xuepeng Chen*</div>
+                <div class="pub-venue">European Journal of Cancer, 2026</div>
+                <div class="pub-link">
+                    <a href="https://doi.org/10.1016/j.ejca.2025.116118" target="_blank">10.1016/j.ejca.2025.116118</a>
+
+                </div>
+
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-status pub-published">Published</span>
+                <div class="pub-title">Automatic Point Cloud Patching of Intraoral Three-Dimensional Scanning Based on Deep Learning</div>
+                <div class="pub-authors">Qianhan Zheng#, <strong>Yimin Wang#</strong>, Mengqi Zhou, Yongjia Wu, Jiahao Chen, Xiaozhe Wang, Lixia Gao, Ting Kang*, Xuepeng Chen*, Weifang Zhang*</div>
+                <div class="pub-venue">International Dental Journal, 2025</div>
+                <div class="pub-link">
+                    <a href="https://doi.org/10.1016/j.identj.2025.100911" target="_blank">10.1016/j.identj.2025.100911</a>
+
+                </div>
+
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-status pub-review">Under Review</span>
+                <div class="pub-title">Automatic Hard Palate Segmentation and Registration Pipeline for Orthodontic Tooth Movement Monitoring</div>
+                <div class="pub-authors">Qianhan Zheng#, <strong>Yimin Wang#</strong>, Mengqi Zhou, Yingjia Sun, Changan Chen, Nan Jiang, Jianuo Zu, Ting Kang, Xuepeng Chen*</div>
+                <div class="pub-venue">Biomedical Signal Processing and Control</div>
+                <div class="pub-link">
+
+                </div>
+
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-status pub-review">Under Review</span>
+                <div class="pub-title">Multimodal AI Integrating Imaging, Clinical, and Biomarker Data for Early Oral and Maxillofacial Lesion Screening: A Methodological Systematic Review and Future Research Agenda</div>
+                <div class="pub-authors">Changan Chen, <strong>Yimin Wang</strong>, Yiwei Gao, Qianshun Hu, Panzhuoer Gao, Qianhan Zheng, Luyi Wang, Zhijian Xie*, Xuepeng Chen*</div>
+                <div class="pub-venue">Journal of Medical Internet Research (JMIR)</div>
+                <div class="pub-link">
+
+                </div>
+
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-status pub-prep">In Preparation</span>
+                <div class="pub-title">OralDAT: A Translational Usability Assessment Framework and Intelligent Selection Agent for Public Oral and Maxillofacial Imaging Datasets</div>
+                <div class="pub-authors">Author list, <strong>Yimin Wang</strong></div>
+                <div class="pub-venue"></div>
+                <div class="pub-link">
+
+                </div>
+
+            </div>
+
+            <div class="pub-item">
+                <span class="pub-status pub-prep">In Preparation</span>
+                <div class="pub-title">Evidence and prior knowledge based segmentation framework for 3D dental data</div>
+                <div class="pub-authors">Author list, <strong>Yimin Wang</strong></div>
+                <div class="pub-venue"></div>
+                <div class="pub-link">
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tech">
+            <h2>🛠️ Tech Stack</h2>
+            <div class="tech-tags">
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>Open3D</span>
+                <span>Point Cloud</span>
+                <span>MONAI</span>
+                <span>U-KAN</span>
+                <span>SPSS</span>
+                <span>Systematic Review</span>
+                <span>Dataset Benchmarking</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>📫 Contact</h2>
+            <p>Email: <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a></p>
+            <p>Open to collaboration on dental AI, multimodal medical AI, open dataset and foundational model initiatives.</p>
+
+        </section>
+
+        <footer>
+            Bridging Clinical Dentistry and Artificial Intelligence 🦷🤝🤖
+        </footer>
     </div>
-</section>
 
-<section>
-    <h2>📫 Contact</h2>
-    <p>Email: <a href="mailto:wangyimin80@outlook.com">wangyimin80@outlook.com</a></p>
-    <p>Open to collaboration on dental AI, multimodal medical AI, and open dataset initiatives.</p>
-    <p style="margin-top:10px; color:#d73a4a; font-size:0.9rem;">⚠️ All clinical raw data are not publicly available due to ethical requirements. Repositories contain code, demo samples, and result visualizations only.</p>
-</section>
-
-<footer>
-    Bridging Clinical Dentistry and Artificial Intelligence 🦷🤝🤖
-</footer>
 </body>
 </html>
