@@ -26,17 +26,22 @@
             overflow-y: auto;
             border-right: 1px solid #e5e7eb;
         }
-        .avatar {
+        .avatar-wrap {
             width: 160px;
             height: 160px;
             border-radius: 999px;
-            object-fit: cover;
-            object-position: center 5%;
-            background-size: 150%;
-            display: block;
+            overflow: hidden;              /* 裁掉放大后溢出的部分 */
             margin: 0 auto 16px;
             border: 3px solid #fff;
             box-shadow: 0 2px 8px #00000015;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;             /* 先让图片填满 160×160 */
+            transform: scale(1.3);         /* 再把图片内容放大 30% */
+            transform-origin: center 25%;  /* 缩放中心偏上，防止裁头 */
+            display: block;
         }
         .sidebar h1 {
             text-align: center;
@@ -207,7 +212,9 @@
 <body>
     <!-- 左侧栏 -->
     <div class="sidebar">
-        <img class="avatar" src="images/me.jpg" alt="Yimin WANG">
+        <div class="avatar-wrap">
+             <img class="avatar" src="images/me.jpg" alt="Yimin WANG">
+        </div>
         <h1>Yimin WANG</h1>
         <div class="title">Dental & Medical AI Researcher</div>
 
